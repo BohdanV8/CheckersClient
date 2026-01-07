@@ -35,14 +35,12 @@ export default class Store {
 
   async registration(
     email,
-    password,
-    bio
+    password
   ) {
     try {
       const response = await AuthService.registration(
         email,
         password,
-        bio
       );
       this.setAuth(true);
       this.setUser(response.data.user);

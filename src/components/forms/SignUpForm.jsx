@@ -8,7 +8,6 @@ const SignUpForm = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    bio: "",
   });
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -28,7 +27,7 @@ const SignUpForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    store.registration(formData.email, formData.password, formData.bio);
+    store.registration(formData.email, formData.password);
     navigate("/profile");
   };
   return (
@@ -58,17 +57,6 @@ const SignUpForm = () => {
           onChange={handleChange}
           required
         />
-      </div>
-      <div className="form-group">
-        <label htmlFor="Bio">Bio</label>
-        <textarea
-          className="form-control"
-          id="Bio"
-          rows="3"
-          name="bio"
-          value={formData.bio}
-          onChange={handleChange}
-        ></textarea>
       </div>
       <button type="submit" className="btn btn-primary mt-4">
         Submit

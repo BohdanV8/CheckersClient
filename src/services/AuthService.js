@@ -5,22 +5,15 @@ export default class AuthService {
     const formData = new FormData();
     formData.append("email", email);
     formData.append("password", password);
-    return $api.post("/Auth/login", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
+    return $api.post("/Auth/login", {email, password}, {
       withCredentials: true,
     });
   }
-  static async registration(email, password, bio) {
+  static async registration(email, password) {
     const formData = new FormData();
     formData.append("email", email);
     formData.append("password", password);
-    formData.append("bio", bio);
-    return $api.post("/Auth/register", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
+    return $api.post("/Auth/register", {email, password}, {
       withCredentials: true, // Додано для включення облікових даних
     });
   }

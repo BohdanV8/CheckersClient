@@ -10,18 +10,11 @@ const SignInForm = () => {
     password: "",
   });
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "photo") {
-      setFormData({
-        ...formData,
-        photo: files[0],
-      });
-    } else {
+    const { name, value } = e.target;
       setFormData({
         ...formData,
         [name]: value,
       });
-    }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
