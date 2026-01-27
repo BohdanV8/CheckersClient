@@ -16,7 +16,7 @@ $api.interceptors.response.use(
     if (error.response.status == 401 && error.config && !error.config._isRetry) {
         originalRequest._isRetry = true
       try {
-        const response = await axios.get(`${API_URL}/Auth/refresh`, {
+        const response = await axios.post(`${API_URL}/Auth/refresh`,{}, {
           withCredentials: true,
         });
         return $api.request(originalRequest);

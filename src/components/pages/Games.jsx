@@ -1,11 +1,11 @@
 import React from "react";
 
-const Posts = () => {
+const Games = () => {
     return (
         <div className="container">
-            <h1>Posts</h1>
+            <h1>Games</h1>
         </div>
     )
 }
 
-export default Posts;
+export default Games;

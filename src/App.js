@@ -7,20 +7,23 @@ import AppRouter from "./components/AppRouter";
 import Store from "./store/store";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
+import GameStore from "./store/gameStore";
 const store = new Store();
+const gameStore = new GameStore();
 export const Context = createContext({
   store,
+  gameStore
 });
 const App = observer(() => {
   useEffect(() => {
     store.checkAuth();
   }, []);
   return (
-    <Context.Provider value={{ store }}>
+    <Context.Provider value={{ store, gameStore }}>
       <BrowserRouter>
         <Header />
         <AppRouter />
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </Context.Provider>
   );

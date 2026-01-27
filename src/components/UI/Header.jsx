@@ -36,6 +36,11 @@ const Header = observer(() => {
             FAQs
           </Link>
         </li>
+         <li>
+          <Link to="/lobby" className="nav-link px-2 link-dark">
+            Lobby
+          </Link>
+        </li>
         <li>
           <Link to="/about" className="nav-link px-2 link-dark">
             About
