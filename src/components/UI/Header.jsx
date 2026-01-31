@@ -26,7 +26,7 @@ const Header = observer(() => {
             Profile
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/posts" className="nav-link px-2 link-dark">
             Posts
           </Link>
@@ -35,7 +35,7 @@ const Header = observer(() => {
           <Link to="#" className="nav-link px-2 link-dark">
             FAQs
           </Link>
-        </li>
+        </li> */}
          <li>
           <Link to="/lobby" className="nav-link px-2 link-dark">
             Lobby
